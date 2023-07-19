@@ -1,0 +1,122 @@
+// Exercícios de laço de repetição ENQUANTO - FAÇA
+
+// Pedir para o usuário um número e mostrar a sua tabuada até o 10.
+ALGORITMO "imprima_tabuada"
+VAR
+    numero, x: INTEIRO
+INICIO
+    ESCREVA("Digite um valor: ")
+    LEIA(numero)
+
+    x <- 1
+    ENQUANTO (x <= 10) FAÇA
+        ESCREVA(numero, " x ", x, " = ", numero * x)
+        x <- x + 1
+    FIMENQUANTO
+FIMALGORITMO
+
+// 1. Fazer um algoritmo que imprima em tela números pares de 1 até 5.
+ALGORITMO "imprima_numeros_pares"
+VAR
+    numero: INTEIRO
+INICIO
+    numero <- 1
+    ENQUANTO (numero <= 5) FAÇA
+        SE(numero % 2 = 0) ENTAO
+            ESCREVA(numero)
+        FIMSE
+
+        numero <- numero + 1
+    FIMENQUANTO
+FIMALGORITMO
+
+// 2. Fazer um algoritmo que mostre uma tabela com números de 1 até 5
+// e seus respectivos quadrados.
+ALGORITMO "imprima_quadrados_numeros"
+VAR
+    numero: INTEIRO
+INICIO
+    numero <- 1
+    ENQUANTO (numero <= 5) FAÇA
+        ESCREVA("O quadrado de ", numero, " é ", numero ^ 2)
+        numero <- numero + 1
+    FIMENQUANTO
+FIMALGORITMO
+
+// 3. Fazer um algoritmo para imprimir os números inteiros
+// múltiplos de 4 de 1 até 20.
+
+// Resolução 1
+ALGORITMO "imprima_multiplos"
+VAR
+    numero, multiplo: INTEIRO
+INICIO
+    numero <- 1
+    multiplo <- 0
+    ENQUANTO (multiplo < 20) FAÇA
+        multiplo <- 4 * numero
+        ESCREVA("4 x ", numero, " = ", multiplo)
+        numero <- numero + 1
+    FIMENQUANTO
+FIMALGORITMO
+
+// Resolução 2
+ALGORITMO "imprima_multiplos"
+VAR
+    numero: INTEIRO
+INICIO
+    numero <- 1
+    ENQUANTO (numero <= 20) FAÇA
+        SE(numero % 4 = 0) ENTAO
+            ESCREVA(numero)
+        FIMSE
+
+        numero <- numero + 1
+    FIMENQUANTO
+FIMALGORITMO
+
+// 4. Faça um algoritmo que leia dois valores
+// (limite inferior e limite superior) e
+// mostre todos os números pares desse intervalo.
+ALGORITMO "imprima_pares_intervalo"
+VAR
+    limiteInferior, limiteSuperior, controlador: INTEIRO
+INICIO
+    ESCREVA("Digite o limite inferior: ")
+    LEIA(limiteInferior)
+    ESCREVA("Digite o limite superior: ")
+    LEIA(limiteSuperior)
+
+    ESCREVA("Pares do intervalo: ")
+
+    controlador <- limiteInferior
+    ENQUANTO (controlador <= limiteSuperior) FAÇA
+        SE(controlador % 2 = 0) ENTAO
+            ESCREVA(controlador)
+        FIMSE
+
+        controlador <- controlador + 1
+    FIMENQUANTO
+FIMALGORITMO
+
+// 5. Fazer um algoritmo que faça a soma de valores impares de
+// 1 até 12 e logo após calcule a média dos valores somados.
+ALGORITMO "calcula_media_impares"
+VAR
+    num, soma, qtd: INTEIRO
+    media: REAL
+INICIO
+    num <- 1
+    ENQUANTO (num <= 12) FAÇA
+        SE(num % 2 = 1) ENTAO
+            soma <- soma + num
+            qtd <- qtd + 1
+        FIMSE
+
+        num <- num + 1
+    FIMENQUANTO
+
+    media <- soma / qtd
+    ESCREVA("A soma é ", soma, " e a média é ", media)
+FIMALGORITMO
+

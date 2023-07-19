@@ -1,0 +1,132 @@
+// Exercícios de estruturas condicionais
+
+// Acima ou igual a 7 é aprovação
+// Abaixo de 4 é reprovação
+// Entre 4 e 7 é recuperação
+ALGORITMO "soma_nota"
+VAR
+    nota1, nota2, nota3, notaFinal: REAL
+inicio
+    ESCREVA("Digite a nota da avaliação 1: ")
+    LEIA(nota1)
+    ESCREVA("Digite a nota da avaliação 2: ")
+    LEIA(nota2)
+    ESCREVA("Digite a nota da avaliação 3: ")
+    LEIA(nota3)
+
+    notaFinal <- nota1 + nota2 + nota3
+
+    SE(notaFinal >= 7) ENTAO
+        ESCREVA("Aprovado!")
+    SENAO
+        SE(notaFinal < 4) ENTAO
+            ESCREVA("Reprovado!")
+        SENAO
+            ESCREVA("Recuperação!")
+        FIMSE
+    FIMSE
+FIMALGORITMO
+
+// 1. Escreva um algoritmo que leia dois valores e escreva uma mensagem
+// informando qual é o maior deles. Caso sejam digitados números iguais, deve ser
+// dada uma mensagem informando que os números digitados são iguais.
+ALGORITMO "verifica_numero_maior"
+VAR
+    numero1, numero2: REAL
+INICIO
+    ESCREVA("Digite o primeiro número: ")
+    LEIA(numero1)
+    ESCREVA("Digite o segundo número: ")
+    LEIA(numero2)
+
+    SE(numero1 > numero2) ENTAO
+        ESCREVA(numero1, " é maior que ", numero2)
+    SENAO
+        SE(numero1 < numero2) ENTAO
+            ESCREVA(numero2, " é maior que ", numero1)
+        SENAO
+            ESCREVA("Os números digitados são iguais")
+        FIMSE
+    FIMSE
+FIMALGORITMO
+
+// 2. Escreva um algoritmo que leia um valor e que seja impresso uma mensagem,
+// se esse número é negativo, positivo ou é zero.
+ALGORITMO "numero_positivo_negativo"
+VAR
+    numero1: REAL
+INICIO
+    ESCREVA("Digite o número: ")
+    LEIA(numero1)
+
+    SE(numero1 > 0) ENTAO
+        ESCREVA(numero1, " é positivo")
+    SENAO
+        SE(numero1 < 0) ENTAO
+            ESCREVA(numero1, " é negativo")
+        SENAO
+            ESCREVA(numero1, " é zero")
+        FIMSE
+    FIMSE
+FIMALGORITMO
+
+// 3. Tendo como entrada a altura e o sexo (codificado da seguinte forma:
+// 1:feminino 2:masculino) de uma pessoa, construa um algoritmo que calcule e
+// imprima seu peso ideal, utilizando as seguintes fórmulas:
+// homens:(72.7*h)-58;
+// mulheres: (62.1*h) - 44.7;
+ALGORITMO "verifica_peso_ideal"
+VAR
+    altura, pesoIdeal: REAL
+    sexo: INTEIRO
+INICIO
+    ESCREVA("Digite a altura: ")
+    LEIA(altura)
+    ESCREVA("Digite 1 para sexo feminino ou 2 para sexo masculino: ")
+    LEIA(sexo)
+
+    SE(sexo = 1) ENTAO
+        pesoIdeal <- (62.1 * altura) - 44.7
+        ESCREVA("Para sexo feminino e ", altura, " de altura, o peso ideal é ", pesoIdeal)
+    SENAO SE(sexo = 2) ENTAO
+        pesoIdeal <- (72.7 * altura) - 58
+        ESCREVA("Para sexo masculino e ", altura, " de altura, o peso ideal é ", pesoIdeal)
+    SENAO
+    	ESCREVA("Opção inválida!")
+    FIMSE
+FIMALGORITMO
+
+// 4. Elaborar um algoritmo que efetue a leitura de um número inteiro e apresente
+// uma mensagem informando se o número digitado é par ou ímpar.
+ALGORITMO "verifica_numero_par"
+VAR
+    numero1, resultado: INTEIRO
+INICIO
+    ESCREVA("Digite um número: ")
+    LEIA(numero1)
+
+    resultado <- numero1 % 2
+
+    SE(resultado = 0) ENTAO
+        ESCREVA(numero1, " é número par")
+    SENAO
+        ESCREVA(numero1, " é número ímpar")
+    FIMSE
+FIMALGORITMO
+
+// 5. Fazer um algoritmo que verifique se uma nota é valida ou não. Considere a
+// nota de 0 a 10.
+ALGORITMO "valida_nota"
+VAR
+    nota1: real
+INICIO
+    ESCREVA("Digite uma nota de 0 a 10: ")
+    LEIA(nota1)
+
+    SE(nota1 >= 0) E (nota1 <= 10) ENTAO
+        ESCREVA(nota1, " é uma nota válida")
+    SENAO
+        ESCREVA(nota1, " é uma nota inválida")
+    FIMSE
+FIMALGORITMO
+

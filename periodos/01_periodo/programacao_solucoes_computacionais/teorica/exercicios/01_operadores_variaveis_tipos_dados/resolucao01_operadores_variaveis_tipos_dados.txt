@@ -1,0 +1,149 @@
+Exercícios de introdução à algoritmos e operações
+
+1. Identifique o tipo de cada variável abaixo:
+
+a) falso
+LOGICO
+
+b) 750
+INTEIRO
+
+c) “verdadeiro”
+TEXTO
+
+d) “Nane”
+TEXTO
+
+e) 2,22
+REAL
+
+2. Assinale quais são os identificadores válidos e justifique os inválidos.
+
+a) sala02
+Válido
+
+b) soma
+Válido
+
+c) 4*2
+Inválido, pois não começa com letra e utiliza símbolo
+
+d) ok?
+Inválido, pois utiliza símbolo
+
+e) 7home
+Inválido, pois não começa com letra
+
+f) end
+Válido
+
+3. De acordo com o tipo de resultado a ser armazenado em cada variável,
+determine qual o tipo de dados mais adequado – INTEIRO, REAL, CARACTER,
+TEXTO, LÓGICO – para armazenar cada resultado.
+
+a) VarA <- 10 * 2 – (30+2)
+INTEIRO
+
+b) VarB <- Falso
+LOGICO
+
+c) VarC <- “Lógica de Programação”
+TEXTO
+
+d) VarD <- 5 – 2 * 2 > 10 E 10 = 5 * 2
+LOGICO
+
+4. O nome de uma variável é utilizado para sua identificação e posterior uso dentro de
+um programa. O nome a ser utilizado para identificar a variável deve obedecer a certos
+critérios. De acordo com esses critérios, marque com um X os nomes válidos para uma
+variável:
+
+(X)Num1      (X)Data_Nasc         ( )Endereço
+( )1oBim     ( )Nome Cliente      ( )Data-adm
+
+05. Complete o algoritmo, declarando o tipo de dados mais adequado para cada
+variável, para isso verifique o que cada variável estará armazenando do INICIO
+até o FIM.
+
+PROGRAMA Variáveis
+VAR
+    A: TEXTO
+    B: LOGICO
+    C: INTEIRO
+    D: REAL
+    E: LOGICO
+INICIO
+    A <- “Sistemas de Informação”
+    B <- SQR(9)>=3
+    C <- 9 + (5 MOD 2)
+    D <- 25/2 + 10
+    E <- 13 DIV 2 = 13/2
+FIM
+
+// 6. Fazer um algoritmo que leia o nome de uma mercadoria, seu preço, sua
+// quantidade comprada e mostre no final o total a pagar.
+ALGORITMO "mercadoria_preco_total"
+VAR
+    nomeMercadoria: TEXTO
+    precoMercadoria, quantidadeMercadoria, precoTotal: REAL
+INICIO
+    ESCREVA("Digite o nome da mercadoria: ")
+    LEIA(nomeMercadoria)
+    ESCREVA("Digite o preço da mercadoria: ")
+    LEIA(precoMercadoria)
+    ESCREVA("Digite a quantidade comprada da mercadoria: ")
+    LEIA(quantidadeMercadoria)
+    precoTotal <- precoMercadoria * quantidadeMercadoria
+    ESCREVA("O preço total é R$ ", precoTotal)
+FIMALGORITMO
+
+
+// 7. Desenvolver a lógica para um programa que efetue o cálculo da área de uma
+// circunferência, apresentando na tela a medida da área calculada. Para se efetuar
+// o cálculo da área de uma circunferência é necessário conhecer a fórmula que
+// executa este cálculo, sendo esta: A = ¶R2, onde A é a variável que conterá o
+// resultado do cálculo da área, ¶ é o valor de pi (3.14159, sendo uma constante
+// na fórmula) e R o valor do raio, que será lido pelo programa.
+ALGORITMO "calculo_area_circunferencia"
+CONST
+    PI_VALOR: REAL <- 3.14159
+VAR
+    raio, area: REAL
+INICIO
+    ESCREVA("Digite o raio da circunferência: ")
+    LEIA(raio)
+    area <- PI_VALOR * raio ^ 2
+    ESCREVA("A área da circunferência é ", area)
+FIMALGORITMO
+
+// 8. Elaborar um algoritmo que efetue a leitura de três valores (A, B e C) e
+// apresente como resultado final a soma dos quadrados dos três valores lidos.
+ALGORITMO "soma_quadrados"
+VAR
+    a, b, c, soma: REAL
+INICIO
+    ESCREVA("Digite o primeiro número: ")
+    LEIA(a)
+    ESCREVA("Digite o segundo número: ")
+    LEIA(b)
+    ESCREVA("Digite o terceiro número: ")
+    LEIA(c)
+    soma <- a ^ 2 + b ^ 2 + c ^ 2
+    ESCREVA("A soma dos quadrados dos três números é ", soma)
+FIMALGORITMO
+
+// 9. Crie um algoritmo que calcule quanto é gasto para abastecer um carro. Sendo
+// que o preço da gasolina já é conhecido pelo programa, R$ 5,80. A quantidade
+// de litros deve ser informada pelo usuário. Escrever o valor total gasto, com base
+// no preço da gasolina e na quantidade de litros.
+ALGORITMO "preco_total_gasolina"
+VAR
+    precoLitroGasolina: REAL <- 5.80
+    volumeGasolina, precoFinal: REAL
+INICIO
+    ESCREVA("Digite o volume em litros que deseja abastecer: ")
+    LEIA(volumeGasolina)
+    precoFinal <- precoLitroGasolina * volumeGasolina
+    ESCREVA("O valor total gasto é R$ ", precoFinal)
+FIMALGORITMO
+

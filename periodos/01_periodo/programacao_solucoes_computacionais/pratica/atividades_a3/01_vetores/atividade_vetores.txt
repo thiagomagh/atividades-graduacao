@@ -1,0 +1,27 @@
+Atividade Vetores
+
+1 - No domingo, dia 30/04/2023, haverá o GP do Azerbaijão de Fórmula 1, diretamente da
+cidade de Baku. A Liberty Media, empresa gestora da marca F1, está desenvolvendo um
+novo software para a classificação das voltas, durante a qualificação da corrida.
+Você estará encarregado de implementar o módulo do Q3, no qual os 10 carros mais
+rápidos disputam a Pole Position.
+
+Funcionalidades necessárias:
+- Volta mais rápida;
+- Segunda volta mais rápida;
+- Terceira volta mais rápida;
+- Média de tempo das voltas;
+- Diferença de tempo do primeiro para o décimo.
+
+2 - A Copa do Mundo de Xadrez é um torneio de xadrez realizado a cada dois anos e para
+este ano a Confederação Brasileira de Xadrez indicou o Grande Mestre Luis Paulo Supi
+para nos representar.
+A empresa Chess.com solicitou o desenvolvimento de um software para o controle dos
+participantes.
+
+Funcionalidades necessárias:
+- Nome dos 16 participantes;
+- Rating FIDE dos 16 participantes;
+- Exibição dos 3 maiores Rating, com os nomes dos jogadores;
+- Rating médio do torneio.
+

@@ -1,0 +1,228 @@
+// Exercícios de revisao
+
+// Laço de repetição PARA - FAÇA
+// Exemplo:
+// Faça um algoritmo que leia dois valores
+// (limite inferior e limite superior) e
+// mostre todos os números pares desse intervalo.
+ALGORITMO "imprima_pares_intervalo"
+VAR
+    limiteInferior, limiteSuperior: INTEIRO
+INICIO
+    ESCREVA("Digite o limite inferior: ")
+    LEIA(limiteInferior)
+    ESCREVA("Digite o limite superior: ")
+    LEIA(limiteSuperior)
+
+    ESCREVA("Pares do intervalo")
+
+    PARA (limiteInferior; limiteInferior <= limiteSuperior; limiteInferior++) FAÇA
+        SE(limiteInferior % 2 <> 1) ENTAO
+            ESCREVA(limiteInferior)
+        FIMSE
+    FIMPARA
+FIMALGORITMO
+
+// 1. Ler um número inteiro e mostrar o seu antecessor e seu sucessor.
+ALGORITMO "imprima_numero_antecessor_sucessor"
+VAR
+    num, numAntecessor, numSucessor: INTEIRO
+INICIO
+    ESCREVA("Digite algum número para saber o seu antecessor e seu sucessor: ")
+    LEIA(num)
+
+    numAntecessor <- num - 1
+    numSucessor <-  num + 1
+
+    ESCREVA("Número digitado: ", num)
+    ESCREVA("Seu antecessor: ", numAntecessor)
+    ESCREVA("Seu sucessor: ", numSucessor)
+FIMALGORITMO
+
+// 2. Entrar com a base e a altura de um retângulo e imprimir a seguinte saída:
+// Área:
+// Perímetro:
+// Diagonal:
+ALGORITMO "imprima_retangulo_medidas"
+VAR
+    base, altura, perimetro, area, diagonal: REAL
+INICIO
+    ESCREVA("Digite a base do retângulo: ")
+    LEIA(base)
+    ESCREVA("Digite a altura do retângulo: ")
+    LEIA(altura)
+    
+    area <- base * altura
+    perimetro <- 2 * (base + altura)    
+    // diagonal <- raiz quadrada de (base * base + altura * altura)
+
+    ESCREVA("Área do retângulo é: ", area)
+    ESCREVA("Perímetro do retângulo é: ", perimetro)    
+	// ESCREVA("Diagonal do retângulo é: ", diagonal)
+FIMALGORITMO
+
+// 3. Entrar com um número e informar se ele é divisível por 5.
+ALGORITMO "valida_divisivel_cinco"
+VAR
+    num: INTEIRO
+INICIO
+    ESCREVA("Digite um número: ")
+    LEIA(num)
+
+    SE(num % 5 = 0) ENTAO
+        ESCREVA(num, " é divisível por 5")
+    SENAO
+        ESCREVA(num, " não é divisível por 5")
+    FIMSE
+FIMALGORITMO
+
+// 4. Entrar com dois números diferentes e imprimi-los em ordem crescente.
+ALGORITMO "imprima_numeros_ordem_crescente"
+VAR
+    num1, num2: INTEIRO
+INICIO
+    ESCREVA("Digite o primeiro número: ")
+    LEIA(num1)
+    ESCREVA("Digite o segundo número: ")
+    LEIA(num2)
+
+    SE(num1 > num2) ENTAO
+        ESCREVA(num2, " e ", num1)
+    SENAO SE(num1 < num2) ENTAO
+        ESCREVA(num1, " e ", num2)
+    SENAO
+        ESCREVA("Números são iguais!")
+    FIMSE
+FIMALGORITMO
+
+// 5. Entrar com a idade de uma pessoa e informar:
+// Se ela é maior de idade
+// Se ela é menor de idade
+// Se ela é maior de 64 anos
+ALGORITMO "imprima_categoria_maioridade"
+VAR
+    idade: INTEIRO
+INICIO
+    ESCREVA("Informe a idade: ")
+    LEIA(idade)
+
+    SE(idade >= 0 E idade < 18) ENTAO
+        ESCREVA("Menor de idade")
+    SENAO SE(idade >= 18 E idade <= 64) ENTAO
+        ESCREVA("Maior de idade")
+    SENAO SE(idade > 64) ENTAO
+        ESCREVA("Maior de 64 anos")
+    SENAO
+        ESCREVA("Idade inválida!")
+    FIMSE
+FIMALGORITMO
+
+// 6. Entrar com o salário de uma pessoa e imprimir o 
+// desconto do INSS segundo a tabela:
+// Menor que 1000 - isento
+// Entre 1000 e 1500 - 10%
+// Entre 1501 e 2000 - 15%
+// Maior que 2000 - 20%
+ALGORITMO "imprima_tabela_desconto_inss"
+VAR
+    salario: REAL
+INICIO
+    ESCREVA("Informe o salário: ")
+    LEIA(salario)
+
+    SE(salario >= 0 E salario < 1000) ENTAO
+        ESCREVA("Isento do desconto do INSS")
+    SENAO SE(salario >= 1000 E salario <= 1500) ENTAO
+        ESCREVA("10% - ", salario * 10 / 100)
+    SENAO SE(salario > 1500 E salario <= 2000) ENTAO
+        ESCREVA("15% - ", salario * 15 / 100)
+    SENAO SE(salario > 2000) ENTAO
+        ESCREVA("20% - ", salario * 20 / 100)
+    SENAO
+        ESCREVA("Salário inválido!")
+    FIMSE
+FIMALGORITMO
+
+// 7. Fazer um algoritmo que leia a média bimestral de 10 alunos e mostre a nota
+// mais alta, a nota mais baixa e média da turma.
+ALGORITMO "imprima_media_turma"
+VAR
+    quantAluno: INTEIRO
+    mediaAluno, maiorMediaAluno, menorMediaAluno, somaMediaAluno, mediaTurma: REAL
+INICIO
+    quantAluno <- 0
+    somaMediaAluno <- 0
+    
+    PARA (cont: INTEIRO <- 1; cont <= 10; cont++) FAÇA
+        quantAluno <- quantAluno + 1
+        ESCREVA("Aluno ", quantAluno, " - Digite a média bimestral: ")
+        LEIA(mediaAluno)
+        somaMediaAluno <- somaMediaAluno + mediaAluno
+
+        SE(quantAluno == 1) ENTAO
+            maiorMediaAluno <- mediaAluno
+            menorMediaAluno <- mediaAluno
+        SENAO
+            SE(mediaAluno > maiorMediaAluno) ENTAO
+                maiorMediaAluno <- mediaAluno
+            SENAO SE(mediaAluno < menorMediaAluno) ENTAO
+                menorMediaAluno <- mediaAluno
+            FIMSE
+        FIMSE        
+    FIMPARA
+
+    mediaTurma <- somaMediaAluno / quantAluno
+    ESCREVA("Média mais alta é ", maiorMediaAluno)
+    ESCREVA("Média mais baixa é ", menorMediaAluno)
+    ESCREVA("Média da turma é ", mediaTurma)
+FIMALGORITMO
+
+// 8. Faça um algoritmo que leia 3 valores (N , limite inferior, limite superior) e
+// mostre todos os números múltiplos de N entre os dois limites lidos.
+ALGORITMO "imprima_multiplos_intervalo"
+VAR
+    numero, limiteInferior, limiteSuperior: INTEIRO
+INICIO
+    ESCREVA("Digite um número inteiro para descobrir os seus múltiplos: ")
+    LEIA(numero)
+    ESCREVA("Digite a partir de qual número inteiro deve começar a procurar os múltiplos: ")
+    LEIA(limiteInferior)
+    ESCREVA("Digite o número inteiro final da procura: ")
+    LEIA(limiteSuperior)
+
+    ESCREVA("Múltiplos de ", numero, ", de ", limiteInferior, " a ", limiteSuperior)
+
+    PARA (cont: INTEIRO <- limiteInferior; cont <= limiteSuperior; cont++) FAÇA
+        SE(cont % numero = 0) ENTAO
+            ESCREVA(cont)
+        FIMSE
+    FIMPARA
+FIMALGORITMO
+
+// 9. Crie um algoritmo que leia o nome, a idade e o sexo de 30 pessoas e com
+// base na idade e no sexo, o algoritmo deve contar a quantidade de pessoas do
+// sexo masculino que tem idade maior do que 25 anos. No final do algoritmo deve
+// mostrar a quantidade de pessoas com essa característica.
+ALGORITMO "imprima_multiplos_intervalo"
+VAR
+    nome: TEXTO
+    idade, quantidade: INTEIRO
+    sexo: CARACTER
+INICIO
+    quantidade <- 0
+    PARA (i: INTEIRO <- 1; i <= 30; i++) FAÇA
+        ESCREVA("Pessoa ", i)
+        ESCREVA("Digite o nome: ")
+        LEIA(nome)
+        ESCREVA("Digite a idade: ")
+        LEIA(idade)
+        ESCREVA("Digite o sexo, m [masculino] f [feminino]: ")
+        LEIA(sexo)
+
+        SE((sexo == 'm' OU sexo == 'M') E idade > 25) ENTAO
+            quantidade = quantidade + 1
+        FIMSE
+    FIMPARA
+
+    ESCREVA("Total de pessoas do sexo masculino que tem idade maior do que 25 anos: ", quantidade)
+FIMALGORITMO
